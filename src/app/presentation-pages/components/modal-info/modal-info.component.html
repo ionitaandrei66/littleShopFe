@@ -1,0 +1,21 @@
+<div class="overlay" (click)="closeMenu()"></div>
+<div class="modal-info-wrapper" >
+  <div class="modal-info">
+   <div class="left"></div>
+   <div class="right"></div>
+   <div class="top"></div>
+   <div class="bottom"></div>
+
+   <section class="modal-product">
+   <section class="modal-info-title">
+     <h3 class="modal-info-product-title">{{shoppingProduct()?.title}}</h3>
+     <button class="close-btn" (click)="closeMenu()">✖</button>
+   </section>
+     <div class="separator"></div>
+   <section class="modal-info-body">
+     <h4>Description:</h4>
+     <p>{{shoppingProduct()?.description}}</p>
+   </section>
+   </section>
+  </div>
+</div>

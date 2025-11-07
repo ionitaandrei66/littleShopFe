@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'style/spacing';
+@import 'style/colors';
+@import 'style/font-size';
+
+html,
+body,
+app-root {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: $third-color-be;
+
+  font-size: clamp(14px, 1.5vw, 76px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+
+
+
+//overlay todo move in a separate file
+.slideout-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.slideout-panel {
+  background: #fff;
+  width: 400px;
+  max-width: 100%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

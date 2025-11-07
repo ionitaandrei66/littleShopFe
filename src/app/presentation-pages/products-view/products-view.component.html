@@ -1,0 +1,79 @@
+<section class="main-wrapper">
+  <section class="content-area">
+    <img
+      [ngSrc]="'/peHome/be-test.jpg'"
+      class="background-image"
+      alt="Sticluță roșie Eva Nails Rubber Base cu capac auriu, plasată pe fundal bej pastel"
+      priority
+      role="img"
+      aria-label="Imagine cu produsul Eva Nails Rubber Base"
+      fill
+    />
+
+    <header class="content-header">
+      <span class="eva-title" (click)="showMenu = true">
+        EVA NAILS
+      </span>
+<!--      <div class="header-categories">-->
+<!--        <span>CATEGORIES</span>-->
+<!--        <span class="material-icons categories-icon">chevron_right</span>-->
+<!--      </div>-->
+    </header>
+
+    @if (product) {
+      <section class="product-container">
+        <aside class="product-image">
+          <img
+            [ngSrc]="product.img"
+            class="background-image"
+            style="position: relative"
+            alt="Sticluță roșie Eva Nails Rubber Base cu capac auriu, plasată pe fundal bej pastel"
+            priority
+            role="img"
+            aria-label="Imagine cu produsul Eva Nails Rubber Base"
+            fill
+          />
+        </aside>
+
+        <aside class="product-description">
+          <h2>🛍️
+            {{ product.title }}
+          </h2>
+          <h4>Price: {{ product.price }}</h4>
+
+          <div>
+            <h4>⚙️ Caracteristici principale:</h4>
+            <p>
+              {{ product.properties }}
+            </p>
+          </div>
+          <span class="eva-title more-description" (click)="openModalInfo(product)">More</span>
+        </aside>
+      </section>
+    } @else {
+      <section>no product selected</section>
+    }
+
+    <footer class="content-footer">
+      <div class="arrow-container">
+        <span class="material-icons arrow-icon" (click)="prevProduct()">chevron_left</span>
+      </div>
+      <div class="content-submit">
+        <button class="shop-button" (click)="addToCart(product)">Add To cart</button>
+        @if (shoppingCart?.length) {
+          <button class="shop-button shopping-button" (click)="showMenu = true">{{shoppingCart.length}} <span class="material-icons cart-icon">shopping_cart</span></button>
+        }
+      </div>
+      <div class="arrow-container">
+        <span class="material-icons arrow-icon" (click)="nextProduct()">chevron_right</span>
+      </div>
+    </footer>
+  </section>
+</section>
+<app-slide-shopping-cart-menu [toggleMenu]="showMenu" [setShoppingCart]="shoppingCart" (positionChange)="showMenu = $event" (changeShoppingCart)="shoppingCart = $event" position="right">
+</app-slide-shopping-cart-menu>
+
+@if (showModalInfo) {
+  <app-modal-info (isOpenChange)="showModalInfo = false" [shoppingProduct]="modalInfoItem"></app-modal-info>
+}
+

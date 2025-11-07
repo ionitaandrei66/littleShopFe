@@ -1,0 +1,206 @@
+// Layout general
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.side-menu {
+  background-color: #1d1e22;
+  width: 400px;
+  height: 100%;
+  display: flex;
+}
+
+.slide-category {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+.content-area {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.background-image {
+  object-fit: cover;
+  z-index: -1;
+}
+
+// Header & titlu
+.content-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eva-title {
+  background: linear-gradient(to right, #d4af7f, #f9e8c9); // aur + crem deschis
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  line-height: 32px;
+  font-size: 32px;
+  text-shadow: 0 6px 15px rgba(212, 175, 127, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.eva-title:hover {
+  color: #fff4da;
+  transform: translateY(-2%) scale(1.05);
+}
+
+.header-categories {
+  background: linear-gradient(to right, #d4af7f, #f9e8c9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  text-shadow: 0 6px 15px rgba(212, 175, 127, 0.5);
+  line-height: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  .categories-icon {
+    font-size: 44px;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2%) scale(1.05);
+  }
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  li {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: #d4af7f;
+      transform: translate(5px, -3px);
+    }
+  }
+}
+
+// Footer și butoane
+.content-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 2rem;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-icon {
+  color: #d6b85a;
+  font-size: 77px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #fff4da;
+    text-shadow: 0 6px 15px rgba(212, 175, 127, 0.5);
+    transform: translateY(-2%) scale(1.05);
+  }
+}
+
+.content-submit {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.shop-button {
+  width: 200px;
+  border: none;
+  border-top: 1px solid white;
+  background: linear-gradient(to bottom, #f9e8c9, #f1c87c, #d4af7f, #c39b6a);
+  color: #141416;
+  padding: 12px 32px;
+  font-weight: 600;
+  height: 44px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(212, 175, 127, 0.3);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(to bottom, #fff4da, #f7dca4, #e1b97f, #c9a96a);
+    box-shadow: 0 6px 15px rgba(212, 175, 127, 0.5);
+    transform: translateY(-2%) scale(1.05);
+  }
+}
+
+.product-description {
+  width: 50%;
+  display: flex;
+  color: wheat;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product-image {
+  width: 50%;
+  height: 100%;
+  position: relative
+}
+
+.product-container {
+  display: flex;
+  gap: clamp(16px, 2vw, 32px);
+  padding: clamp(16px, 2vw, 32px);
+  min-height: 0;
+  overflow: auto;
+}
+
+.more-description {
+  font-size: 1.5rem;
+  height: 5rem;
+  width: 50%;
+  margin-top: 10px;
+}
+
+
+.shopping-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 25px;
+  font-weight: bolder;
+}

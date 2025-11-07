@@ -1,0 +1,62 @@
+<div class="overlay" *ngIf="isOpen" (click)="closeMenu()"></div>
+
+<div class="side-menu" [class.open]="isOpen" [class.right]="position() === 'right'">
+  <div class="shopping-cart-upper">
+    <button class="close-btn" (click)="closeMenu()">✖</button>
+
+    <section class="shopping-cart-wrapper">
+      @for (item of shoppingCart; track item.id) {
+        <div class="shopping-cart-item-wrapper">
+          <div class="background-image-wrapper">
+            <img
+              [ngSrc]="item.img"
+              class="background-image"
+              alt="Sticluță roșie Eva Nails Rubber Base cu capac auriu, plasată pe fundal bej pastel"
+              priority
+              role="img"
+              aria-label="Imagine cu produsul Eva Nails Rubber Base"
+              fill
+            /></div>
+          <div class="shopping-item-selected">
+            <div class="shopping-items">
+              <h4 class="shopping-cart-title">{{ item.title }}</h4>
+              <h6 class="shopping-cart-subtitle">{{ item.subtitle }}</h6>
+            </div>
+            <div class="numbers-selectors">
+              <button class="plus-minus-button" (click)="removeOne(item)">
+                <span class="material-icons" >remove</span>
+              </button>
+              <input type="number" [value]="item.howMany"/>
+              <button class="plus-minus-button" (click)="addOne(item)">
+                <span class="material-icons" >add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    </section>
+  </div>
+  <div class="separator2"></div>
+  <div class="shopping-cart-bottom">
+    <section class="shopping-cart-calculation-wrapper">
+      <span
+        class="shopping-cart-calculation"><span>Subtotal:</span> <span>{{ getTotal }}  {{ getCurrency }}</span></span>
+      <span class="shopping-cart-calculation"><span>Transport:</span><span> 25 {{ getCurrency }}</span></span>
+      <div class="separator"></div>
+    </section>
+
+    <section class="shopping-cart-total">
+      <span class="shopping-cart-calculation">
+            <h2>Total:</h2>
+      <h2> {{ getTotal }}  {{ getCurrency }}</h2>
+      </span>
+      <span class="transport-free">
+            Transport Gratuit - mai adauga produse de
+        <br/>
+        <span> 154 RON</span>
+      </span>
+    </section>
+    <button class="shop-button">Go To Command</button>
+    <button class="shop-button">Details</button>
+  </div>
+</div>
