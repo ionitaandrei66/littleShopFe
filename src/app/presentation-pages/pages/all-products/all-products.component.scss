@@ -1,0 +1,214 @@
+.shop-button {
+  width: 200px;
+  border: none;
+  border-top: 1px solid white;
+  background: linear-gradient(to bottom, #f9e8c9, #f1c87c, #d4af7f, #c39b6a);
+  color: #141416;
+  padding: 12px 32px;
+  font-weight: 600;
+  height: 44px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(212, 175, 127, 0.3);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(to bottom, #fff4da, #f7dca4, #e1b97f, #c9a96a);
+    box-shadow: 0 6px 15px rgba(212, 175, 127, 0.5);
+    transform: translateY(-2%) scale(1.05);
+  }
+}
+
+.shopping-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.background-image {
+  object-fit: cover;
+  position: relative;
+  z-index: -1;
+  height: 200px;
+  width: 100%;
+}
+
+.all-products-wrapper {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 2rem;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.eva-title {
+  background: linear-gradient(to right, #d4af7f, #f9e8c9); // aur + crem deschis
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  line-height: 32px;
+  font-size: 32px;
+  text-shadow: 0 6px 15px rgba(212, 175, 127, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.eva-title:hover {
+  color: #fff4da;
+  transform: translateY(-2%) scale(1.05);
+}
+
+.search {
+  width: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  line-height: 2rem;
+  padding: 0.3rem;
+  font-size: 1rem;
+  text-shadow: 0 6px 15px rgba(212, 175, 127, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search:focus {
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  line-height: 2rem;
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+
+.modal-info {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  .left {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    width: 2px;
+    background: linear-gradient(to right, #d4af7f, #f9e8c9);
+  }
+
+  .right {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    width: 2px;
+    background: linear-gradient(to right, #d4af7f, #f9e8c9);
+  }
+  .top {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 2px;
+    background: linear-gradient(to right, #d4af7f, #f9e8c9);
+  }
+  .bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(to right, #d4af7f, #f9e8c9);
+  }
+}
+
+.modal-info:hover {
+  .left, .right, .top, .bottom {
+    background: #fff4da;
+  }
+}
+
+.shopping-cart-subtitle{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    text-align: center;
+}
+
+.shopping-cart-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    text-align: center;
+}
+
+.shopping-items {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-content: flex-start;
+  color: white;
+  align-items: center;    text-align: center;
+}
+
+.product-price {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  padding: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  overflow: auto;
+  height: 500px;
+}
+
+.filters {
+  width: 100%;
+  height: 100px;
+}
+
+.products-section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+}

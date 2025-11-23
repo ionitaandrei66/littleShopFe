@@ -1,0 +1,65 @@
+<img
+  [ngSrc]="'/peHome/be-test.jpg'"
+  class="background-image"
+  alt="Sticluță roșie Eva Nails Rubber Base cu capac auriu, plasată pe fundal bej pastel"
+  priority
+  role="img"
+  aria-label="Imagine cu produsul Eva Nails Rubber Base"
+  fill
+/>
+<section class="all-products-wrapper">
+  <header class="header">
+   <span class="eva-title" (click)="showMenu = true">
+        EVA NAILS
+      </span>
+    <section class="modal-info">
+      <input type="text" class="search" (input)="search($event)"  />
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="top"></div>
+      <div class="bottom"></div>
+    </section>
+
+    <div></div>
+  </header>
+  <section class="products-section">
+   <header class="filters">
+
+   </header>
+    <main class="body">
+      @for (product of products; track product.id) {
+        <div class="product">
+          <img
+            [ngSrc]="product.img"
+            fetchpriority="auto"
+            class="background-image"
+            alt="Sticluță roșie Eva Nails Rubber Base cu capac auriu, plasată pe fundal bej pastel"
+            priority
+            role="img"
+            width="100"
+            height="100"
+            aria-label="Imagine cu produsul Eva Nails Rubber Base"
+            />
+        <div>
+          <div class="shopping-items">
+            <h4 class="shopping-cart-title">{{ product.title }}</h4>
+            <h6 class="shopping-cart-subtitle">{{ product.subtitle }}</h6>
+          </div>
+        </div>
+          @if (shoppingCart) {
+          <div class="product-price">
+            <h4>{{product.price}} {{product.currency}}</h4>
+          </div>
+          <button class="shop-button" (click)="addToCart(product)" >Add To cart</button>
+          }
+        </div>
+      }
+    </main>
+  </section>
+  <footer class="footer">
+    <button class="shop-button shopping-button" (click)="showMenu = true">{{shoppingCart.length}} <span class="material-icons cart-icon">shopping_cart</span></button>
+  </footer>
+</section>
+
+<app-slide-shopping-cart-menu [toggleMenu]="showMenu" [setShoppingCart]="shoppingCart" (positionChange)="showMenu = $event" (changeShoppingCart)="shoppingCart = $event" position="right">
+</app-slide-shopping-cart-menu>
