@@ -1,6 +1,6 @@
 import {Component, input, output} from '@angular/core';
 import {NgIf} from "@angular/common";
-import {Product, ShoppingCartProduct} from "../../products";
+import {Product} from "../../shared/interfaces/product.model";
 
 @Component({
   selector: 'app-modal-info',

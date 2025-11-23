@@ -1,6 +1,6 @@
 import {NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
 import {Component, EventEmitter, input, Input, output, Output} from '@angular/core';
-import {ShoppingCartProduct} from "../../products";
+import {ShoppingCartProduct} from "../../shared/interfaces/shopping-cart-product.model";
 
 @Component({
   selector: 'app-slide-shopping-cart-menu',

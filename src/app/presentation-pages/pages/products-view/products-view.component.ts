@@ -1,9 +1,11 @@
 import { NgForOf, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
-import {Product, products, ShoppingCartProduct} from '../products';
-import {categories} from "../categories";
-import {SlideShoppingCartMenuComponent} from "../components/slide-menu/slide-shopping-cart-menu.component";
-import {ModalInfoComponent} from "../components/modal-info/modal-info.component";
+import {products} from '../../products';
+import {categories} from "../../categories";
+import {SlideShoppingCartMenuComponent} from "../../components/slide-menu/slide-shopping-cart-menu.component";
+import {ModalInfoComponent} from "../../components/modal-info/modal-info.component";
+import {Product} from "../../shared/interfaces/product.model";
+import {ShoppingCartProduct} from "../../shared/interfaces/shopping-cart-product.model";
 
 
 @Component({

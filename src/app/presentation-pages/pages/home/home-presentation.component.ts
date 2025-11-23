@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
-import {NotificationService} from "../services/notification-service";
+import {NavigationService} from "../../shared/services/navigation.service";
 
 
 
@@ -14,10 +14,10 @@ import {NotificationService} from "../services/notification-service";
   styleUrl: './home-presentation.component.scss'
 })
 export class HomePresentationComponent {
-  constructor(private router: NotificationService) {
+  constructor(private router: NavigationService) {
   }
 
   public toPresentation(): void {
-    this.router.goToProductsView();
+    this.router.goToAllProductsView();
   }
 }
