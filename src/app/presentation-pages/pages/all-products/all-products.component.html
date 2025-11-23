@@ -49,14 +49,14 @@
           <div class="product-price">
             <h4>{{product.price}} {{product.currency}}</h4>
           </div>
-          @if (!cartIds().has(product.id)) {
+          @if (!shoppingCart().has(product.id)) {
           <button class="shop-button" (click)="addToCart(product)" >Add To cart</button>
           } @else {
             <div class="numbers-selectors">
               <button class="plus-minus-button" >
                 <span class="material-icons" >remove</span>
               </button>
-              <input type="number" [value]="1"/>
+              <input type="number" [value]="shoppingCart().get(product.id)?.howMany ?? 0"/>
               <button class="plus-minus-button">
                 <span class="material-icons" >add</span>
               </button>
@@ -67,9 +67,9 @@
     </main>
   </section>
   <footer class="footer">
-    <button class="shop-button shopping-button" (click)="showMenu = true">{{shoppingCart.length}} <span class="material-icons cart-icon">shopping_cart</span></button>
+    <button class="shop-button shopping-button" (click)="showMenu = true">{{shoppingCartData.length}} <span class="material-icons cart-icon">shopping_cart</span></button>
   </footer>
 </section>
 
-<app-slide-shopping-cart-menu [toggleMenu]="showMenu" [setShoppingCart]="shoppingCart" (positionChange)="showMenu = $event" (changeShoppingCart)="shoppingCart = $event" position="right">
+<app-slide-shopping-cart-menu [toggleMenu]="showMenu" [setShoppingCart]="shoppingCartData" (positionChange)="showMenu = $event" (changeShoppingCart)="shoppingCartData = $event" position="right">
 </app-slide-shopping-cart-menu>
