@@ -1,4 +1,4 @@
-import {Component, DestroyRef, inject, OnInit} from '@angular/core';
+import {Component, computed, DestroyRef, inject, OnInit, signal} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {SlideShoppingCartMenuComponent} from "../../components/slide-menu/slide-shopping-cart-menu.component";
 import {products} from "../../products";
@@ -18,17 +18,17 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
   styleUrl: './all-products.component.scss'
 })
 export class AllProductsComponent implements OnInit{
-  public shoppingCart: ShoppingCartProduct[] = [];
   public showMenu = false;
-  public products: Product[] = products;
-
+  public shoppingCart = signal<ShoppingCartProduct[]>([]);
+  public products = signal<Product[]>(products);
+  public cartIds = computed(() => new Set(this.shoppingCart().map(p => p.id)));
   private readonly destroyRef = inject(DestroyRef);
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
     this.cartService.cart$
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((cart: ShoppingCartProduct[]) => this.shoppingCart = cart);
+      .subscribe((cart: ShoppingCartProduct[]) => this.shoppingCart.set(cart));
   }
 
   public addToCart(product: Product) {
@@ -37,4 +37,5 @@ export class AllProductsComponent implements OnInit{
 
   public search($event: Event) {
   }
+
 }
